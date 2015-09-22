@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+#import <UIImageView+AFNetworking.h>
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *posterImage;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
 
 @end
 
@@ -17,6 +22,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self.posterImage setImageWithURL:[NSURL URLWithString:self.imageInfo[@"url"]]];
+
+    self.titleLabel.text = self.imageInfo[@"titleNoFormatting"];
+    self.summaryLabel.text = self.imageInfo[@"contentNoFormatting"];
+    [self.summaryLabel sizeToFit];
 }
 
 - (void)didReceiveMemoryWarning {

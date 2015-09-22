@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MoviesListController.h
 //  RottenTomatoSample
 //
 //  Created by James Yan on 9/19/15.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-@property (weak, nonatomic) NSDictionary *imageInfo;
+@interface MoviesListController : UIViewController
 
 @end
-
